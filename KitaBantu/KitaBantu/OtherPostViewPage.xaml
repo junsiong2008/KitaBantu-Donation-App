@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cvt="clr-namespace:KitaBantu.Converters"
+             x:Class="KitaBantu.OtherPostViewPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <cvt:StringLengthToBoolConverter x:Key="strToBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Grid Padding="6,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="9*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Grid.Row="0" Source="account_icon.png"/>
+                    <Label x:Name="postUsername" Text="{Binding UserPost.AppUser.username}" Grid.Column="1" Grid.Row="0" FontSize="Subtitle"  VerticalOptions="CenterAndExpand"/>
+                </Grid>
+                <BoxView HeightRequest="1" BackgroundColor="Orange"/>
+                <StackLayout Padding="10">
+                    <Label x:Name="postTitle" Text="{Binding UserPost.Post.title}" FontAttributes="Bold" FontSize="Title" />
+                    <Label x:Name="postDescription" Text="{Binding UserPost.Post.description}"/>
+                </StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="9*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Grid.Row="0" Source="ic_category.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center"/>
+                    <Label x:Name="postCategory" Text="{Binding UserPost.Post.category }" Grid.Column="1" Grid.Row="0" TextColor="Orange" VerticalOptions="Center" FontAttributes="Bold"/>
+
+                    <Image Grid.Column="0" Grid.Row="1" Source="ic_access_time.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center"/>
+                    <Label x:Name="postDatetimePosted" Text="{Binding UserPost.Post.datetimePosted}" Grid.Column="1" Grid.Row="1" VerticalOptions="Center" FontAttributes="Bold"/>
+
+                    <Image x:Name="postIsCompletedIcon" Grid.Column="0" Grid.Row="2" Source="completed_icon.png" HeightRequest="30" WidthRequest="30" IsVisible="{Binding UserPost.Post.isCompleted}"/>
+                    <Label x:Name="postIsCompletedLabel" Grid.Column="1" Grid.Row="2" Text="Completed"  TextColor="Green" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" HorizontalTextAlignment="Center" IsVisible="{Binding UserPost.Post.isCompleted}"/>
+                </Grid>
+
+                <Frame x:Name="imageFrame" CornerRadius="10" Padding="0" IsClippedToBounds="True" IsVisible="{Binding UserPost.Post.isCompleted, Mode=OneWay, Converter={StaticResource strToBoolConverter}}">
+                    <StackLayout>
+                        <Image x:Name="postImage" Source="{Binding UserPost.Post.imageUrl}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="250" Aspect="AspectFill">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </Frame>
+
+                <BoxView HeightRequest="5"/>
+
+                <Button x:Name="contactButton" Text="Contact to Offer Help" HorizontalOptions="FillAndExpand" BackgroundColor="Orange" TextColor="White" Clicked="contactButton_Clicked"/>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

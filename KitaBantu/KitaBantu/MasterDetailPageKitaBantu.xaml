@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KitaBantu.MasterDetailPageKitaBantu"
+             xmlns:pages="clr-namespace:KitaBantu"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+   
+  <MasterDetailPage.Master>
+        <pages:MasterDetailPageKitaBantuMaster x:Name="MasterPage"/>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <!--<pages:MasterDetailPageKitaBantuDetail/>-->
+                <pages:MainTabbedPage/>
+            </x:Arguments>
+         </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

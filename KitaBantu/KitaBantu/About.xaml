@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KitaBantu.About"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+            <!-- <Label Text="Underweight (below 18.5)" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/> -->
+            <Image Source="splash_transparent.png" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+            <Label Text="KitaBantu" FontAttributes="Bold" FontSize="24" TextColor="#000000" HorizontalOptions="Center"/>
+            <Label Text="v1.0.0" HorizontalOptions="Center"/>
+            <Label Padding="25" VerticalOptions="Center" HorizontalOptions="Center"  HorizontalTextAlignment="Start" Text="KitaBantu is a charity app that allows users to help support Malaysians who are in need during the Covid-19 pandemic. Since the outbreak of COVID-19 early this year, many Malaysians families are financially impacted as they have lost their jobs and primary income. Thus, KitaBantu is developed to provide a platform that allows Malaysians who are affected by the COVID-19 pandemic to seek for assistance in an empathetic digital space. KitaBantu app also makes it convenient for the kind and compassionate Malaysian to lend a hand to the needy through the means of donation of goods and other necessities. The mobile application serves to promote the value of compassion among Malaysians as we are navigating through a hard time.  It brings Malaysian community together while staying apart by connecting the donors and the beneficiaries."/>
+            <Grid VerticalOptions="Center" HorizontalOptions="Center" Padding="0" RowSpacing="0" ColumnSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="code_line.png"/>
+                <Label Grid.Column="1" HorizontalTextAlignment="Start" Text="Developed By: Teng Jun Siong" VerticalOptions="Center"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

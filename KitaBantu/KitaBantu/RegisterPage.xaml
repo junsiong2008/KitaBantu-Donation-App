@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KitaBantu.RegisterPage"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Padding="25">
+                <Image Source="splash_transparent.png" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                <Label Padding="0,0,0,5" Text="KitaBantu" FontAttributes="Bold" FontSize="24" TextColor="#000000" HorizontalOptions="Center"/>
+                <Entry Placeholder="Email Address" x:Name="email"/>
+                <Label x:Name="emailErrorLabel" TextColor="Red" IsVisible="false"/>
+                <Entry Placeholder="Username" x:Name="username"/>
+                <Label x:Name="usernameErrorLabel" TextColor="Red" IsVisible="false"/>
+                <Entry Placeholder="Phone Number (60123456789)" x:Name="phoneNumber" Keyboard="Telephone"/>
+                <Label x:Name="phoneNumberErrorLabel" TextColor="Red" IsVisible="false"/>
+                <Entry Placeholder="Password" IsPassword="True" x:Name="password"/>
+                <Label x:Name="passwordErrorLabel" TextColor="Red" IsVisible="false"/>
+                <Entry Placeholder="Re-Enter Password" IsPassword="True" x:Name="reenterPassword"/>
+                <Label x:Name="repasswordErrorLabel" TextColor="Red" IsVisible="false"/>
+                <BoxView BackgroundColor ="Transparent" HeightRequest="5"></BoxView>
+                <Button BackgroundColor="Orange" TextColor="White" Text="Register" Clicked="registerButton_Clicked" x:Name="registerButton"/>
+
+
+                <Grid VerticalOptions="Center" HorizontalOptions="Center" Padding="0" RowSpacing="0" ColumnSpacing="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Already have an account?"/>
+                    <Label Grid.Column="1" TextColor="Orange" Text="Sign In" VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="signInLabel_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <BoxView HeightRequest="5"/>
+                <ActivityIndicator x:Name="loader" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

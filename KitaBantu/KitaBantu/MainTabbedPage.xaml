@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+           
+            xmlns:views ="clr-namespace:KitaBantu"
+            xmlns:kitabantu="clr-namespace:KitaBantu"
+            x:Class="KitaBantu.MainTabbedPage"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarSelectedItemColor="#FFFFFF"
+            BarBackgroundColor="#FFC107"
+            BarTextColor="#FFFFFF"
+            android:TabbedPage.BarItemColor="#66FFFFFF"
+            Title="KitaBantu"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <!--FFC107-->
+<!--Pages can be added as references or inline-->
+
+
+    <!--
+    <views:About Title="Home" IconImageSource="home_icon.png"/>
+
+    <NavigationPage Title="Category" IconImageSource="category_icon.png">
+        <x:Arguments>
+            <views:About/>
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="New Post" IconImageSource="newpost_icon.png">
+        <x:Arguments>
+            <views:NewPostPage/>
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Search" IconImageSource="search_icon.png">
+        <x:Arguments>
+            <views:About/>
+        </x:Arguments>
+    </NavigationPage>
+    
+    <NavigationPage Title="My Post" IconImageSource="profile_icon.png">
+        <x:Arguments>
+            <views:About/>
+        </x:Arguments>
+    </NavigationPage>
+
+
+    
+    -->
+
+    <views:MainPage Title="Home" IconImageSource="home_icon.png"/>
+    <views:CategoryPage Title="Category" IconImageSource="category_icon.png"/>
+    <views:NewPostPage Title="New Post" IconImageSource="newpost_icon.png"/>
+    <views:SearchPage Title="Search" IconImageSource="search_icon.png"/>
+    <views:MyPostPage Title="My Post" IconImageSource="profile_icon.png"/>
+    
+   
+
+
+</TabbedPage>

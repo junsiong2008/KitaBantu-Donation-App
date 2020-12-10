@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KitaBantu.NewPostPage"
+             xmlns:custom ="clr-namespace:KitaBantu.CustomElements"
+             Title="New Post"
+             Padding="30"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center">
+                <Label Padding="3,0,0,0" Text="Title"/>
+                <custom:LinelessEntry  x:Name="title" BackgroundColor="#30d3d3d3"/>
+                <Label x:Name="titleErrorLabel" TextColor="Red" IsVisible="false"/>
+                <BoxView HeightRequest="5"/>
+                <Label Padding="3,0,0,0" Text="Description"/>
+                <custom:LinelessEditor x:Name="description" AutoSize="TextChanges" BackgroundColor="#30d3d3d3"/>
+                <Label x:Name="descriptionErrorLabel" TextColor="Red" IsVisible="false"/>
+                <BoxView HeightRequest="5"/>
+                <Label Padding="3,0,0,0" Text="Category"/>
+                <Picker x:Name="categoryPicker" BackgroundColor="#30d3d3d3" ItemsSource="{Binding Categories, Mode=TwoWay}" SelectedItem="{Binding Path=CategorySelectedItem, Mode=TwoWay}" ItemDisplayBinding="{Binding categoryName}">
+                </Picker>
+                <Label x:Name="categoryErrorLabel" TextColor="Red" IsVisible="false"/>
+                <BoxView HeightRequest="5"/>
+         
+                <Label Padding="3,0,0,0" Text="Featured Image:"/>
+                <Button Text="Pick Image" x:Name="pickImageButton" Clicked="pickImageButton_Clicked" BackgroundColor="#30d3d3d3"/>
+                <Image x:Name="pickedImage"/>
+                <Button BackgroundColor="#FFA000" TextColor="White" Text="Post" x:Name="postButton" Clicked="postButton_Clicked"/>
+
+                <BoxView HeightRequest="5"/>
+                <ActivityIndicator x:Name="loader" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

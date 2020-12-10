@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KitaBantu.SignInPage"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" Padding="25">
+            <Image Source="splash_transparent.png" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+            <Label Padding="0,0,0,5" Text="KitaBantu" FontAttributes="Bold" FontSize="24" TextColor="#000000" HorizontalOptions="Center"/>
+            <BoxView BackgroundColor ="Transparent" HeightRequest="30"></BoxView>
+            <Entry Placeholder="Email Address" x:Name="email"/>
+            <Label x:Name="emailErrorLabel" TextColor="Red" IsVisible="false"/>
+            <Entry Placeholder="Password" IsPassword="True" x:Name="password"/>
+            <Label x:Name="passwordErrorLabel" TextColor="Red" IsVisible="false"/>
+            <BoxView BackgroundColor ="Transparent" HeightRequest="30"></BoxView>
+            <Button BackgroundColor="Orange" TextColor="White" Text="Sign In" Clicked="signInButton_Clicked" x:Name="signInButton"/>
+            <BoxView BackgroundColor ="Transparent" HeightRequest="5"></BoxView>
+            <Button BackgroundColor="Transparent" BorderColor="Orange" TextColor="Orange" BorderWidth="1" Text="Register An Account" Clicked="registerButton_Clicked" x:Name="registerButton"/>
+            <BoxView HeightRequest="5"/>
+            <ActivityIndicator x:Name="loader" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

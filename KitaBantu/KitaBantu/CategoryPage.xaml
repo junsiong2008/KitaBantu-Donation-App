@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KitaBantu.CategoryPage"
+               xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="categoryListView" HasUnevenRows="True" ItemsSource="{Binding Categories}" ItemTapped="categoryListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Frame IsClippedToBounds="True" HasShadow="True" Padding="0" BackgroundColor="White" CornerRadius="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame CornerRadius="10" Margin="10" Padding="0" HasShadow="True">
+                                            <Image Source="{Binding iconUrl}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
+                                        </Frame>
+                                        <Label Padding="20,0,0,0" Text="{Binding categoryName}" HorizontalOptions="Start" FontSize="20"  VerticalOptions="Center"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
